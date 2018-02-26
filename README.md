@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app allows users to search the City of Chicago database for graffiti removal information. 
 
-Things you may want to cover:
+VIA COMMAND LINE
 
-* Ruby version
+Go to the main graffiti_removal folder. You will be able to search by the last name of the alderman, the month, and the year. 
 
-* System dependencies
+From your terminal run the command: 
 
-* Configuration
+"ruby runner.rb" + variables you would like to search
 
-* Database creation
+Order of the syntax does matter. So, your input should like: 
 
-* Database initialization
+"ruby runner.rb" + alderman_last_name + month + date
 
-* How to run the test suite
+Example: 
 
-* Services (job queues, cache servers, search engines, etc.)
+"ruby runner.rb Moreno 02 2018"
 
-* Deployment instructions
+The format of the month and year should be similar to the format above. Months should be two digits, and years should be four digits. The aldreman's last name can be uppercase of lowercase.
 
-* ...
+This command will return: 
+- the full name of the alderman
+- the ward of the alderman
+- the requested date
+- total number of graffiti removal requests in that alderman's ward during that month
+
+
+

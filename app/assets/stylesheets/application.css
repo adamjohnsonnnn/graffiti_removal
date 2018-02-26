@@ -13,3 +13,57 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	font-family: "Source Sans Pro";
+	background-image: url("https://www.thecitybase.com/assets/promo1.jpg");
+}
+
+.main-body-container {
+	width: 70%;
+	height: 1000px;
+	margin: 0px auto;
+	vertical-align: top;
+	background-color: white;
+}
+
+.main-nav-container {
+	height: 100px;
+	width: 100%;
+	background-color: #212121;
+}
+
+#main-logo {
+	width: 25%;
+	min-width: 200px;
+	margin-top: 30px;
+	margin-left: 30px
+}
+
+.new-graffiti-request-container {
+	width: 50%;
+	margin: auto;
+	text-align: center;
+}
+
+#city-of-chicago-seal {
+	float: left;
+	overflow: auto;
+	width: 100px;
+}
+
+.city-image-container {
+	display: inline-block;
+	width: 25%;
+}
+
+.request-description-container {
+	display: inline-block;
+	width: 70%;
+	vertical-align: top;
+	text-align: left;
+	margin-left: 15px;
+}

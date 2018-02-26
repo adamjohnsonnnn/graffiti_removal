@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GraffitiRemoval</title>
+    <title>City of Chicago - Graffiti Removal</title>
     <%= csrf_meta_tags %>
 
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+  	<div class="main-body-container">
+  		<div class="main-nav-container">
+  			<%= render "shared/main_nav" %>
+  		</div>
+    	<%= yield %>
+	</div>
   </body>
 </html>
