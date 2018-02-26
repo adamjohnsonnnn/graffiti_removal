@@ -4,9 +4,30 @@
 		<img src="https://www.chipublib.org/wp-content/uploads/sites/3/2013/07/city-seal.png" id="city-of-chicago-seal"/>
 	</div>
 	<div class="request-description-container">
-		<p>This search tool provides details on graffiti removal requests by ward throughout Chicago.</p>
+		<p>This search tool provides details on graffiti removal requests by ward throughout Chicago. Submit the last name of the alderman, the month you'd like to search, and the year you'd like to search.</p>
 	</div>
-	<div class="graffiti-request-form">
+	<div class="graffiti-request-form-container">
+
+		<div class="errors-container">
+			<% if @errors %>
+				<% @errors.each do |error| %>
+					<p class="error-message"><%= error %></p>
+				<% end %>
+			<% end %>
+		</div>
+
+		<%= form_with url: "/requests", id: "graffiti-request-form" do |form| %>
+			<%= form.text_field :alderman_last_name, required: true, placeholder: "Alderman's Last Name", class: "graffiti-form-field" %>
+			<br />
+			<%= form.select( :month, ['Month', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'], {:disabled => "0"}, class: "graffiti-form-field" ) %>
+			<br />
+			<%= form.select( :year, ['Year', '2018', '2017', '2016', '2015', '2014'], {:disabled => "0"} , class: "graffiti-form-field" ) %>
+			<br />
+			<%= submit_tag "submit", class: "graffiti-form-submit-button" %>
+		<% end %>
+	</div>
+
+	<div class="graffiti-response-container">
 	</div>
 
 </div>
