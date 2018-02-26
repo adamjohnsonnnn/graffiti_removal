@@ -50,9 +50,13 @@ end
 
 # p final_removal_requests[0]
 # PRINT RESULTS
-puts "Graffiti removal request details in Alderman #{ARGV[0]}'s ward during #{ARGV[1]}/#{ARGV[2]}:"
-puts "Alderman: #{ward_query[0]['alderman']}"
-puts "Ward Number: #{ward_number}"
-puts "Month/Year: #{removal_month}/#{removal_year}"
-puts "TOTAL GRAFFITI REMOVAL REQUESTS: #{final_removal_requests.count}"
+if final_removal_requests.count > 0
+	puts "Graffiti removal request details in Alderman #{ARGV[0]}'s ward during #{ARGV[1]}/#{ARGV[2]}:"
+	puts "Alderman: #{ward_query[0]['alderman']}"
+	puts "Ward Number: #{ward_number}"
+	puts "Month/Year: #{removal_month}/#{removal_year}"
+	puts "TOTAL GRAFFITI REMOVAL REQUESTS: #{final_removal_requests.count}"
+else 
+	puts "There are no results that match your request."
+end
 

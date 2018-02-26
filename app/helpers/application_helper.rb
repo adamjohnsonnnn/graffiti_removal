@@ -3,11 +3,9 @@ module ApplicationHelper
 	def return_ward(alderman_last_name)
 		client = SODA::Client.new({:domain => "data.cityofchicago.org", :app_token => "ZRasycWgICfntlKa08YKdK0I8"})
 		ward_api_results = client.get("7ia9-ayc2")
-		ward_api_results.each do |ward|
-			if ward["alderman"].split(' ')[-1].downcase == alderman_last_name.downcase
-				return ward
-			else 
-				return nil
+		ward_api_results.each do |ward_result|
+			if ward_result["alderman"].split(' ')[-1].downcase == alderman_last_name.downcase
+				return ward_result
 			end
 		end	
 	end
