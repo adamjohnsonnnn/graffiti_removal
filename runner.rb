@@ -31,7 +31,7 @@ end
 end_of_month = Date.new(ARGV[2].to_i, ARGV[1].to_i).next_month.strftime('%Y-%m-%d')
 
 # RETURN ALL GRAFFITI REMOVAL REQUESTS FROM THE CITY OF CHICAGO
-graffiti_api_results = client.get("cdmx-wzbz", { ward: ward_number.to_i, "$order" => "creation_date DESC", "$where" => "creation_date > '#{ARGV[2]}-#{ARGV[1]}-01T00:00:00.000' AND creation_date < '#{end_of_month}'" })
+graffiti_api_results = client.get("cdmx-wzbz", { ward: ward_number.to_i, "$order" => "creation_date DESC", "$where" => "creation_date >= '#{ARGV[2]}-#{ARGV[1]}-01T00:00:00.000' AND creation_date < '#{end_of_month}'" })
 
 # MATCH ALL GRAFFITI REMOVAL REQUESTS TO THE WARD BEING SEARCHED
 # graffiti_matches = graffiti_api_results.select { |removal_request| removal_request["ward"] == ward_number }

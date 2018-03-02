@@ -19,12 +19,12 @@ Example:
 
 "ruby runner.rb Moreno 02 2018"
 
-The format of the month and year should be similar to the format above. Months should be two digits, and years should be four digits. The aldreman's last name can be uppercase of lowercase.
+The format of the month and year should be similar to the format above. Months should be two digits, and years should be four digits. The alderman's last name can be uppercase of lowercase.
 
 This command will return: 
 - the full name of the alderman
 - the ward of the alderman
-- the requested date
+- the requested month/year
 - total number of graffiti removal requests in that alderman's ward during that month
 
 
