@@ -12,7 +12,7 @@ module ApplicationHelper
 
 	def return_removal_requests(ward_number)
 		client = SODA::Client.new({:domain => "data.cityofchicago.org", :app_token => "ZRasycWgICfntlKa08YKdK0I8"})		
-		graffiti_api_results = client.get("cdmx-wzbz")
+		graffiti_api_results = client.get("cdmx-wzbz", ward: ward_number)
 		graffiti_matches = graffiti_api_results.select { |removal_request| removal_request["ward"] == ward_number }
 		return graffiti_matches
 	end
