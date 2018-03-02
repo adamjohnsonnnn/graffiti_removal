@@ -1,7 +1,8 @@
 module ApplicationHelper
 
 	def return_ward(alderman_last_name)
-		client = SODA::Client.new({:domain => "data.cityofchicago.org", :app_token => "ZRasycWgICfntlKa08YKdK0I8"})
+		Hashie.logger = Logger.new(nil)
+		client = SODA::Client.new({:domain => "data.cityofchicago.org", :app_token => ENV["COC_APP_TOKEN"] })
 		ward_api_results = client.get("7ia9-ayc2")
 		ward_api_results.each do |ward_result|
 			if ward_result["alderman"].split(' ')[-1].downcase == alderman_last_name.downcase
@@ -11,7 +12,8 @@ module ApplicationHelper
 	end
 
 	def return_removal_requests(ward_number)
-		client = SODA::Client.new({:domain => "data.cityofchicago.org", :app_token => "ZRasycWgICfntlKa08YKdK0I8"})		
+		Hashie.logger = Logger.new(nil)
+		client = SODA::Client.new({:domain => "data.cityofchicago.org", :app_token => ENV["COC_APP_TOKEN"] })		
 		graffiti_api_results = client.get("cdmx-wzbz", ward: ward_number)
 		graffiti_matches = graffiti_api_results.select { |removal_request| removal_request["ward"] == ward_number }
 		return graffiti_matches

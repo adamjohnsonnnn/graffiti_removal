@@ -3,7 +3,9 @@ require "date"
 
 Hashie.logger = Logger.new(nil)
 
-client = SODA::Client.new({:domain => "data.cityofchicago.org", :app_token => "ZRasycWgICfntlKa08YKdK0I8"})
+client = SODA::Client.new({:domain => "data.cityofchicago.org", :app_token => ENV["COC_APP_TOKEN"]})
+
+# ZRasycWgICfntlKa08YKdK0I8
 
 # WARD API REQUEST WITH RESULT LIMITS ENABLED
 # ward_api_results = client.get("7ia9-ayc2", :$limit => 1)

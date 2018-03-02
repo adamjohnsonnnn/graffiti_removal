@@ -1,6 +1,15 @@
 # README
 
-This app allows users to search the City of Chicago database for graffiti removal information. 
+This app allows users to search the City of Chicago database for graffiti removal information.
+
+BEFORE STARTING: 
+You must get your own City of Chicago API key. You can do this here: 
+
+https://dev.socrata.com/foundry/data.cityofchicago.org/cdmx-wzbz
+
+When you download the repo, you must create your own .ENV in the root app folder. In the .ENV folder create a variable COC_APP_TOKEN. Your .ENV should read: 
+
+COC_APP_TOKEN="your_app_token_here" 
 
 ____________________________________________________
 VIA COMMAND LINE
